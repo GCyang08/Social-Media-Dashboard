@@ -1,0 +1,27 @@
+.PageViews {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  padding: 0 15px;
+}
+.Ratings {
+  display: flex;
+  flex-direction: row;
+}
+.GreenPercentage {
+  color: hsl(163, 72%, 41%);
+  margin-left: 5px;
+}
+.RedPercentage {
+  color: hsl(356, 69%, 56%);
+  margin-left: 5px;
+}
+
+@media (min-width: 280px) and (max-width: 760px) {
+  .OverView {
+    display: flex;
+    flex-direction: column;
+  }
+}

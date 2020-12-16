@@ -1,0 +1,91 @@
+.BackGround {
+  background-color: hsl(230, 17%, 14%);
+}
+.AllMedia {
+  background-color: hsl(228, 28%, 20%);
+  border-radius: 3px;
+  cursor: pointer;
+  flex: 1;
+  margin: 15px;
+  text-align: center;
+}
+.AllMedia:hover {
+  background-color: hsl(230, 27%, 25%);
+}
+.AllMedia h1 {
+  color: white;
+  font-size: 45px;
+  line-height: 0px;
+  margin-top: 45px;
+}
+.AllMedia h3 {
+  color: white;
+  font-size: 30px;
+  line-height: 0px;
+}
+.AllMedia p {
+  color: hsl(228, 12%, 44%);
+  font-size: 14px;
+  letter-spacing: 3.5px;
+  margin-bottom: 25px;
+}
+.AllMedia span {
+  color: hsl(228, 34%, 66%);
+}
+.Title {
+  color: white;
+  line-height: 0;
+}
+.Title2 {
+  color: white;
+  position: relative;
+  top: -100px;
+  left: 15px;
+  margin: 50px 0px 25px;
+}
+
+/*This bottom section is fro the media components*/
+.Media {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: relative;
+  top: -100px;
+  z-index: 100;
+}
+.UserName {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.UserName span {
+  font-size: 14px;
+  margin-left: 10px;
+}
+.Ratings {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.GreenPercentage {
+  color: hsl(163, 72%, 41%);
+  font-weight: bold;
+  margin-left: 5px;
+}
+.RedPercentage {
+  color: hsl(356, 69%, 56%);
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+@media (min-width: 280px) and (max-width: 767px) {
+  .Media {
+    display: flex;
+    flex-direction: column;
+    top: -25px;
+  }
+  .Title2 {
+    top: -15px;
+  }
+}

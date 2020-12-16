@@ -1,0 +1,12 @@
+.Hr {
+  border: 0;
+  height: 4px;
+  background-image: linear-gradient(
+    to right,
+    hsl(37, 97%, 70%),
+    hsl(329, 70%, 58%)
+  );
+  border-radius: 10px 10px 0 0;
+  position: relative;
+  top: -12px;
+}
