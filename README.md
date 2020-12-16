@@ -1,0 +1,2 @@
+# SocialMediaDashboard
+This project is made in React JS showing off my flexbox grid. I also used Material-UI to help style my components. In this project my users should be able to view optimal layout for the site depending on their device's screen size, see hover states for all interactive elements on the page. I am still going to work on this project by adding a theme switcher that enables a dark mode or a light mode depending on the user's preference.
