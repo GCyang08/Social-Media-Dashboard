@@ -1,6 +1,8 @@
 import React from "react";
 import classes from "../Media/Media.module.css";
-// import title from "../Media/Media.module.css";
+import fbLogo from "../../assets/icon-facebook.svg";
+import upArrow from "../../assets/icon-up.svg";
+import downArrrow from "../../assets/icon-down.svg";
 import FacebookPageViews from "./FacebookOverview/FacebookPageViews/FacebookPageViews";
 import FacebookLikes from "./FacebookOverview/FacebookLikes/FacebookLikes";
 import InstagramLikes from "./InstagramOverview/InstagramLikes/InstagramLikes";
@@ -18,13 +20,37 @@ const Overview = (props) => {
         <h1 className={classes.Title2}>Overview- Today</h1>
         <div className={classes.Media}>
           <div className={classes.AllMedia}>
-            <FacebookPageViews facebookPgViews={props.facebookPgViews} />
+            <FacebookPageViews
+              values={props.facebookPgViews}
+              title={"Page Views"}
+              logo={fbLogo}
+              altText={"facebook-logo"}
+              arrow={upArrow}
+              altIconText={"up arrow"}
+              percentage={"3"}
+            />
           </div>
           <div className={classes.AllMedia}>
-            <FacebookLikes facebookLikes={props.facebookLikes} />
+            <FacebookPageViews
+              values={props.facebookLikes}
+              title={"Likes"}
+              logo={fbLogo}
+              altText={"facebook-logo"}
+              arrow={upArrow}
+              altIconText={"up arrow"}
+              percentage={"2"}
+            />
           </div>
           <div className={classes.AllMedia}>
-            <InstagramLikes instagramLikes={props.instagramLikes} />
+            <FacebookPageViews
+              values={props.instagramLikes}
+              title={"Likes"}
+              logo={fbLogo}
+              altText={"facebook-logo"}
+              arrow={upArrow}
+              altIconText={"up arrow"}
+              percentage={"2"}
+            />
           </div>
           <div className={classes.AllMedia}>
             <InstagramViews instagramViews={props.instagramViews} />

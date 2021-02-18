@@ -11,7 +11,7 @@ const Media = (props) => {
     <div className={classes.BackGround}>
       <Container>
         <div className={classes.Media}>
-          <Facebook facebook={props.facebook} />
+          <Facebook facebook={props.facebook} companyName={"facebook"} />
           <Twitter twitter={props.twitter} />
           <Instagram instagram={props.instagram} />
           <Youtube youtube={props.youtube} />
