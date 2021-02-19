@@ -1,5 +1,7 @@
 # Getting Started with Create React App
 
+![Social-Media-Dashboard](https://user-images.githubusercontent.com/69400974/108568441-f08c2080-72be-11eb-800b-3d931a2e5f48.png)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
