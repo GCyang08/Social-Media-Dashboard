@@ -1,69 +1,151 @@
-import React, { Component } from "react";
-import classes from "./Dashboard.module.css";
-import Header from "../components/Header/Header";
+import React, { useState } from "react";
+import "./Dashboard.css";
+
+import { ThemeProvider } from "styled-components";
+import {
+  lightTheme,
+  darkTheme,
+} from "../components/ThemeSwitcher/ColorTheme/theme";
+import { GlobalStyles } from "../components/ThemeSwitcher/ColorTheme/global";
+
+import facebook from "../assets/icon-facebook.svg";
+import instagram from "../assets/icon-instagram.svg";
+import twitter from "../assets/icon-twitter.svg";
+import youtube from "../assets/icon-youtube.svg";
+
+import ThemeSwitcher from "../components/ThemeSwitcher/ThemeSwitcher";
 import Media from "../components/Media/Media";
 import Overview from "../components/Overview/OverView";
 
-class Dashboard extends Component {
-  state = {
-    followers: {
-      fbFollowers: 1987,
-      twitterFollowers: 1044,
-      instaFollowers: "11k",
-      youtubeSubs: 8239,
-    },
-    totalFollowers: [1987, 1044, 11734, 8239],
+function Dashboard() {
+  const [media, setMedia] = useState({
+    socialMedia: [
+      {
+        companyName: "facebook",
+        logo: facebook,
+        username: "@nathanf",
+        totalFollowers: 1987,
+        followers: "FOLLOWERS",
+        followersRate: false,
+        rate: 12,
+      },
+      {
+        companyName: "instagram",
+        logo: instagram,
+        username: "@realnathanf",
+        totalFollowers: 11734,
+        followers: "FOLLOWERS",
+        followersRate: false,
+        rate: 1099,
+      },
+      {
+        companyName: "twitter",
+        logo: twitter,
+        username: "@nathanf",
+        totalFollowers: 1044,
+        followers: "FOLLOWERS",
+        followersRate: false,
+        rate: 99,
+      },
+      {
+        companyName: "youtube",
+        logo: youtube,
+        username: "Nathan F.",
+        totalFollowers: 8239,
+        followers: "SUBSCRIBERS",
+        followersRate: true,
+        rate: 144,
+      },
+    ],
+    socialMediaOverview: [
+      {
+        logo: facebook,
+        overview: "Page views",
+        overviewMedia: "Likes",
+        viewsPercentage: false,
+        likesPercentage: true,
+        pageViews: 87,
+        pgViewsPercent: 3,
+        likes: 52,
+        likesPercent: 2,
+      },
+      {
+        logo: twitter,
+        overview: "Retweets",
+        overviewMedia: "Likes",
+        viewsPercentage: false,
+        likesPercentage: false,
+        pageViews: 117,
+        pgViewsPercent: 303,
+        likes: 507,
+        likesPercent: 553,
+      },
+    ],
+    socialMediaOverview2: [
+      {
+        logo: instagram,
+        overview: "Likes",
+        overviewMedia: "Profile Views",
+        viewsPercentage: false,
+        likesPercentage: false,
+        pageViews: 5462,
+        pgViewsPercent: 2257,
+        likes: "52k",
+        likesPercent: 1375,
+      },
+      {
+        logo: youtube,
+        overview: "Likes",
+        overviewMedia: "Total Views",
+        viewsPercentage: true,
+        likesPercentage: true,
+        pageViews: 107,
+        pgViewsPercent: 19,
+        likes: 1407,
+        likesPercent: 12,
+      },
+    ],
+  });
 
-    facebook: {
-      pageViews: 87,
-      likes: 52,
-    },
-    twitter: {
-      retweets: 117,
-      likes: 507,
-    },
-    instagram: {
-      profileViews: "52k",
-      likes: 5462,
-    },
-    youtube: {
-      totalViews: 1407,
-      likes: 107,
-    },
-  };
+  const [theme, setTheme] = useState("light");
 
-  totalFollowersHandler = () => {
-    const followers = [...this.state.totalFollowers];
-    console.log(followers);
-    const all = followers.reduce((acc, followers, i) => {
-      return acc + followers;
+  const totalFollowersHandler = () => {
+    let allFollowers = null;
+    const allSocialMediaFollowers = media.socialMedia.reduce((acc, media) => {
+      return (allFollowers = acc + media.totalFollowers);
     }, 0);
-    return all;
+    return allFollowers.toLocaleString();
   };
 
-  render() {
-    return (
-      <div className={classes.Dashboard}>
-        <Header totalFollowers={this.totalFollowersHandler()} />
-        <Media
-          facebook={this.state.followers.fbFollowers}
-          twitter={this.state.followers.twitterFollowers}
-          instagram={this.state.followers.instaFollowers}
-          youtube={this.state.followers.youtubeSubs}
-        />
-        <Overview
-          facebookPgViews={this.state.facebook.pageViews}
-          facebookLikes={this.state.facebook.likes}
-          instagramLikes={this.state.instagram.likes}
-          instagramViews={this.state.instagram.profileViews}
-          twitterRetweets={this.state.twitter.retweets}
-          twitterLikes={this.state.twitter.likes}
-          youtubeLikes={this.state.youtube.likes}
-          youtubeViews={this.state.youtube.totalViews}
-        />
-      </div>
-    );
-  }
+  const toggleTheme = () => {
+    if (theme === "light") {
+      setTheme("dark");
+    } else {
+      setTheme("light");
+    }
+  };
+
+  return (
+    <div>
+      <ThemeProvider theme={theme === "dark" ? darkTheme : lightTheme}>
+        <GlobalStyles />
+        <header className="Header">
+          <div>
+            <h1>Social Media Dashboard</h1>
+            <p>Total Followers: {totalFollowersHandler()}</p>
+            <hr />
+          </div>
+          <div>
+            <ThemeSwitcher theme={theme} toggleTheme={toggleTheme} />
+          </div>
+        </header>
+        <div className="Layout">
+          <Media media={media} />
+          <Overview media={media} />
+        </div>
+      </ThemeProvider>
+    </div>
+  );
 }
 
 export default Dashboard;

@@ -1,27 +1,66 @@
-.PageViews {
+.OverView {
+  padding: 25px;
+}
+.OverView h1 {
+  text-align: center;
+  position: relative;
+  left: -370px;
+}
+.Test,
+.OverViewLayout,
+.SectionLayout,
+.Section div {
   display: flex;
-  flex-direction: row;
+}
+.Test {
+  justify-content: center;
+}
+.OverViewLayout,
+.Section div {
   justify-content: space-between;
+}
+.SectionLayout {
+  justify-content: space-evenly;
+}
+.Section {
+  border-radius: 3px;
+  margin: 10px;
+  padding: 20px 20px 0;
+  width: 240px;
+}
+.Section div {
   align-items: center;
-  height: 60px;
-  padding: 0 15px;
 }
-.Ratings {
-  display: flex;
-  flex-direction: row;
+.Section span {
+  font-weight: 600;
 }
-.GreenPercentage {
+.Green {
   color: hsl(163, 72%, 41%);
-  margin-left: 5px;
 }
-.RedPercentage {
+.Red {
   color: hsl(356, 69%, 56%);
+}
+.Red,
+.Green {
+  font-size: 14px;
+  font-weight: bold;
   margin-left: 5px;
 }
 
-@media (min-width: 280px) and (max-width: 760px) {
+@media (min-width: 280px) and (max-width: 1026px) {
   .OverView {
-    display: flex;
+    padding: 15px;
+  }
+  .OverView h1 {
+    position: relative;
+    left: 10px;
+    text-align: left;
+  }
+  .Test,
+  .SectionLayout {
     flex-direction: column;
+  }
+  .Section {
+    width: auto;
   }
 }

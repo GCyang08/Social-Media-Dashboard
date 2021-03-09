@@ -1,0 +1,17 @@
+.Switcher {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  top: 15px;
+  line-height: 0;
+}
+.Switcher p {
+  margin-right: 15px;
+}
+@media (min-width: 280px) and (max-width: 1026px) {
+  .Switcher {
+    position: static;
+  }
+}

@@ -1,91 +1,92 @@
-.BackGround {
-  background-color: hsl(230, 17%, 14%);
+.fbHr,
+.twitterHr,
+.ybHr,
+.igHr {
+  border-radius: 15px 15px 0 0;
+  position: relative;
+  top: -10px;
 }
-.AllMedia {
-  background-color: hsl(228, 28%, 20%);
-  border-radius: 3px;
-  cursor: pointer;
-  flex: 1;
-  margin: 15px;
+.fbHr {
+  border: 2px solid rgb(25, 143, 245);
+}
+.igHr {
+  border: 0;
+  height: 4px;
+  background-image: linear-gradient(
+    to right,
+    hsl(37, 97%, 70%),
+    hsl(329, 70%, 58%)
+  );
+}
+.twitterHr {
+  border: 2px solid hsl(203, 89%, 53%);
+}
+.ybHr {
+  border: 2px solid hsl(348, 97%, 39%);
+}
+.Media,
+.MediaUserName {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Media {
   text-align: center;
+  margin: 25px 25px 0;
 }
-.AllMedia:hover {
-  background-color: hsl(230, 27%, 25%);
+.MediaBox {
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  margin: 10px;
 }
-.AllMedia h1 {
-  color: white;
+.MediaBoxLayout {
+  margin: 20px;
+  width: 200px;
+}
+.MediaBoxLayout h1 {
   font-size: 45px;
-  line-height: 0px;
+  line-height: 0;
   margin-top: 45px;
 }
-.AllMedia h3 {
-  color: white;
-  font-size: 30px;
-  line-height: 0px;
-}
-.AllMedia p {
-  color: hsl(228, 12%, 44%);
-  font-size: 14px;
-  letter-spacing: 3.5px;
-  margin-bottom: 25px;
-}
-.AllMedia span {
-  color: hsl(228, 34%, 66%);
-}
-.Title {
-  color: white;
+.MediaBoxLayout p {
+  font-size: 15px;
+  font-weight: 300;
   line-height: 0;
-}
-.Title2 {
-  color: white;
-  position: relative;
-  top: -100px;
-  left: 15px;
-  margin: 50px 0px 25px;
+  letter-spacing: 3px;
+  margin-bottom: 30px;
 }
 
-/*This bottom section is fro the media components*/
-.Media {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  position: relative;
-  top: -100px;
-  z-index: 100;
+.MediaUserName img {
+  margin-right: 5px;
 }
-.UserName {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+.MediaUserName span {
+  font-size: 15px;
+  font-weight: 600;
 }
-.UserName span {
-  font-size: 14px;
-  margin-left: 10px;
-}
-.Ratings {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-.GreenPercentage {
+.Green {
   color: hsl(163, 72%, 41%);
   font-weight: bold;
   margin-left: 5px;
 }
-.RedPercentage {
+.Red {
   color: hsl(356, 69%, 56%);
   font-weight: bold;
   margin-left: 5px;
 }
+.Red,
+.Green {
+  font-size: 14px;
+}
 
-@media (min-width: 280px) and (max-width: 767px) {
+@media (min-width: 280px) and (max-width: 1026px) {
   .Media {
-    display: flex;
     flex-direction: column;
-    top: -25px;
   }
-  .Title2 {
-    top: -15px;
+  .MediaBox {
+    width: 100%;
+  }
+  .MediaBoxLayout {
+    margin: 25px;
+    width: auto;
   }
 }
