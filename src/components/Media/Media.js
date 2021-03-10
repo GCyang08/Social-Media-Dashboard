@@ -19,7 +19,7 @@ function Media(props) {
   };
   return (
     <div className={classes.Media}>
-      {props.media.socialMedia.map((media, i) => {
+      {props.media.media.map((media, i) => {
         return (
           <section key={i} className={classes.MediaBox}>
             <hr className={headerClasses(media.companyName)} />

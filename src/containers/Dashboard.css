@@ -1,42 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
-
-.Header {
-  display: flex;
-  justify-content: space-evenly;
-  padding: 25px;
-  height: 250px;
-}
-.Header div {
-  margin-right: 25px;
-}
-.Header h1 {
-  line-height: 0;
-}
-.Header p {
-  font-weight: bold;
-}
-.Header hr {
-  display: none;
-}
 .Layout {
   position: relative;
   top: -140px;
 }
 
 @media (min-width: 280px) and (max-width: 1026px) {
-  .Header {
-    flex-direction: column;
-    height: 200px;
-  }
-  .Header div {
-    margin-right: 0;
-  }
-  .Header h1 {
-    font-size: 20px;
-  }
-  .Header hr {
-    display: block;
-  }
   .Layout {
     position: static;
   }

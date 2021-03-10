@@ -1,15 +1,15 @@
 import React from "react";
-import classes from "../../Overview/OverView.module.css";
+import classes from "../../OverViews/OverViews.module.css";
 
 import upArrow from "../../../assets/icon-up.svg";
 import downArrow from "../../../assets/icon-down.svg";
 
-function OverView1(props) {
+function OverView(props) {
   return (
-    <div>
-      {props.media.socialMediaOverview.map((media, i) => {
+    <div className={classes.Test}>
+      {props.media.mediaOverview.map((media, i) => {
         return (
-          <div key={i} className={classes.SectionLayout}>
+          <div>
             <section className={classes.Section}>
               <div>
                 <span>{media.overview}</span>
@@ -32,7 +32,7 @@ function OverView1(props) {
                 </span>
               </div>
             </section>
-            <section className={classes.Section}>
+            <section className={classes.Section2}>
               <div>
                 <span>{media.overviewMedia}</span>
                 <img src={media.logo} alt="social media icons" />
@@ -59,4 +59,4 @@ function OverView1(props) {
   );
 }
 
-export default OverView1;
+export default OverView;

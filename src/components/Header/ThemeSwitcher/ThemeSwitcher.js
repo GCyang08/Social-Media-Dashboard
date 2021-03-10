@@ -1,5 +1,5 @@
 import React from "react";
-import "./ThemeSwitcher.css";
+import classes from "./ThemeSwitcher.module.css";
 
 import { Switch, withStyles } from "@material-ui/core";
 
@@ -10,12 +10,11 @@ function ThemeSwitcher(props) {
   const handleChange = (event) => {
     setState({ ...state, [event.target.name]: event.target.checked });
   };
-  const isLight = props.theme === "light";
 
-  const AntSwitch = withStyles((theme) => ({
+  const ToggleSwitch = withStyles((theme) => ({
     root: {
-      width: 50,
-      height: 25,
+      width: 28,
+      height: 16,
       padding: 0,
       display: "flex",
     },
@@ -27,31 +26,36 @@ function ThemeSwitcher(props) {
         color: theme.palette.common.white,
         "& + $track": {
           opacity: 1,
-          backgroundColor: theme.palette.primary.main,
-          borderColor: theme.palette.primary.main,
+          background: toggleBackgroundColor,
+          border: 0,
         },
       },
     },
     thumb: {
-      width: 20,
-      height: 20,
+      width: 12,
+      height: 12,
+      background: thumbBackgroundColor,
       boxShadow: "none",
-      position: "relative",
-      top: "0px",
-      left: "10px",
     },
     track: {
-      borderRadius: 16,
+      border: 0,
+      borderRadius: 16 / 2,
       opacity: 1,
-      backgroundColor: theme.palette.common.white,
+      background: toggleBackgroundColor,
     },
     checked: {},
   }))(Switch);
 
+  const toggleBackgroundColor =
+    "linear-gradient(hsl(210, 78%, 56%), hsl(146, 68%, 55%))";
+
+  const thumbBackgroundColor =
+    props.theme === "light" ? "hsl(232, 19%, 15%)" : " hsl(225, 100%, 98%)";
+
   return (
-    <div className="Switcher">
-      <p>Dark Mode</p>
-      <AntSwitch
+    <div className={classes.Switcher}>
+      {props.theme === "light" ? <p>Light Mode</p> : <p>Dark Mode</p>}
+      <ToggleSwitch
         checked={state.checked}
         onChange={handleChange}
         name="checked"

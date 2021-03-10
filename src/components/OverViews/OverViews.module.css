@@ -9,29 +9,34 @@
 .Test,
 .OverViewLayout,
 .SectionLayout,
-.Section div {
+.Section div,
+.Section2 div {
   display: flex;
 }
 .Test {
   justify-content: center;
 }
 .OverViewLayout,
-.Section div {
+.Section div,
+.Section2 div {
   justify-content: space-between;
 }
-.SectionLayout {
-  justify-content: space-evenly;
-}
-.Section {
+.Section,
+.Section2 {
   border-radius: 3px;
-  margin: 10px;
+  margin: 20px 10px;
   padding: 20px 20px 0;
   width: 240px;
 }
-.Section div {
+.Section2 {
+  margin: 20px 10px 0;
+}
+.Section div,
+.Section2 div {
   align-items: center;
 }
-.Section span {
+.Section span,
+.Section2 span {
   font-weight: 600;
 }
 .Green {
@@ -60,7 +65,8 @@
   .SectionLayout {
     flex-direction: column;
   }
-  .Section {
+  .Section,
+  .Section2 {
     width: auto;
   }
 }

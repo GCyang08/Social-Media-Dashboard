@@ -1,5 +1,3 @@
-import { hslToRgb } from "@material-ui/core";
-
 export const darkTheme = {
   body: "hsl(230, 17%, 14%)",
   headerSection: "hsl(232, 19%, 15%)",
