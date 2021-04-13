@@ -1,7 +1,12 @@
 # Project - Social Media Dashboard
 
 ## Tools I Used For This Project -
-React, a JavaScript application, was used to create this project. This project was entirely built from the ground up. For this page's layout, I used flexbox and CSS to help view the various components. I used React Redux to store my state and the map() array method to show each array in the state object so that each of their social media accounts is shown on the app and users can see the rates and percentages on all of their social media accounts. 
+React, a JavaScript application, was used to create this project. This project was entirely built from the ground up. For this page's layout, I used flexbox and CSS to help view the various components and to make this page responsive as well. I used React Redux to store my state and the map() array method to show each array in the state object so that each of their social media accounts is shown on the app and users can see the rates and percentages on all of their social media accounts. For the Toggle switch, I installed and used styled components for make my themeswitcher.
+
+## Overview - This challenge is from Front End Mentor and for this project users should be able to:
+    . View the optimal layout for the site depending on their device's screen size
+    . See hover states for all interactive elements on the page
+    . Toggle color theme to their preference
 
 ## Available Scripts
 
