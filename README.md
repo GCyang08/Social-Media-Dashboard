@@ -9,7 +9,7 @@
     . Redux
     . Styled Components
 
-## How I Created This Project-
+## How I Created This Project -
 React, a JavaScript application, was used to create this project. This project was entirely built from the ground up. For this page's layout, I used flexbox and CSS to help view the various components and to make this page responsive as well. I used React Redux to store my state and the map() array method to show each array in the state object so that each of their social media accounts is shown on the app and users can see the rates and percentages on all of their social media accounts. For the Toggle switch, I installed and used styled components to create my themeswitcher.
 
 ## Overview - 
