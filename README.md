@@ -3,6 +3,7 @@
 ## Tools used for this Project -
     . HTML
     . CSS
+    . Flex Box
     . JavaScript
     . React
     . Redux
